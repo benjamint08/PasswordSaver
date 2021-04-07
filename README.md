@@ -8,7 +8,7 @@ PasswordSaver is a semi-secure password saver with encryption created in Python 
 
 #### how do I use it?
 
-First, if you don't have it, install '[pip](https://github.com/pypa/pip/releases/tag/21.0.1)' (installation guide below) , it's required for this as it installs the required Python libraries.
+First, if you don't have it, install '[pip](https://github.com/pypa/pip/releases/tag/21.0.1)' (installation guide [here](#installing-pip)) , it's required for this as it installs the required Python libraries.
 
 Then, go in to your terminal and CD to this folder, then you need to type:
 
