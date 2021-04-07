@@ -60,7 +60,10 @@ To get your password, type:
 <br>
 <details>
 <summary>UI Screenshots</summary>
+<br>
 Here are some screenshots of the new UI:
+  <img width="226" alt="Screenshot 2021-04-07 at 16 26 31" src="https://user-images.githubusercontent.com/61296321/113892551-05186f80-97be-11eb-8ee6-864134cbfd5e.png">
+  <img width="242" alt="Screenshot 2021-04-07 at 16 26 58" src="https://user-images.githubusercontent.com/61296321/113892613-15304f00-97be-11eb-92a8-e5f801cd38f4.png">
 </details>
 
 <h1>== Important collapsibles! ==</h1>
