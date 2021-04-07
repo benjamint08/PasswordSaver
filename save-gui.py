@@ -46,7 +46,7 @@ def Generate():
     for x in range(length):
         password.append(random.choice(password_characters))
     pass_msg.set(''.join(password))
-    password.clear()
+    del password[:]
 
 def write_key():
     keyPath = base_dir + '/special/'
