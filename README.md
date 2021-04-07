@@ -82,7 +82,7 @@ Next you want to run `save-password.py` using `Python 3.9`.
 
 It should ask for a Name of the password, then Email/Username, then password.
 
-It then encrypts the JSON and saves it to /password/(name).txt
+It then encrypts the JSON and saves it to /passwords/(name).txt
 
 Then to get the password, open `get-password.py` in `Python 3.9` and enter the name of the password you saved. It displays it in your Terminal, and keeps it encrypted.
 It should look like this:
@@ -102,7 +102,9 @@ Open `delete-password.py` in `Python 3.9` and type the file name in. It will dis
 # any help/questions?
 
 <br>
-Message me on Discord: `emma!!#0088`
+Message me on Discord: 
+
+`emma!!#0088`
 
 # installing pip
 
