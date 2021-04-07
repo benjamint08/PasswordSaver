@@ -43,6 +43,25 @@ The same as the other two, CD to the folder and type:
 .. or type:
 `python3.9 delete-password.py --help`. Again, all arguments are required for quick deleting!
 </details>
+<br>
+<details>
+<summary>UI Saving/Getting</summary>
+CD into the folder and type this to get the save UI:
+
+`python3.9 save-gui.py`
+
+You will know when your password saved when it clears the box contents.
+To get your password, type:
+
+`python3.9 get-gui.py`
+
+..and enter the name of your password and press Get. Simply press Clear when you have done looking at your password. Editing/Deleting will come soon.
+</details>
+<br>
+<details>
+<summary>UI Screenshots</summary>
+Here are some screenshots of the new UI:
+</details>
 
 <h1>== Important collapsibles! ==</h1>
 
