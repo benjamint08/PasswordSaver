@@ -6,6 +6,10 @@ a nice and easy way to save your passwords, entirely made out of python, with a 
 
 PasswordSaver is a semi-secure password saver with encryption created in Python 3.9.
 
+# reviews
+
+<img width="295" alt="Screenshot 2021-04-07 at 12 40 20" src="https://user-images.githubusercontent.com/61296321/113860879-721c0d00-979e-11eb-808d-8af4c38f6fee.png">
+
 # how do I use it?
 
 First, if you don't have it, install '[pip](https://github.com/pypa/pip/releases/tag/21.0.1)' (installation guide [here](#installing-pip)) , it's required for this as it installs the required Python libraries.
