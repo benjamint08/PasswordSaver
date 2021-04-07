@@ -29,6 +29,14 @@ It should look like this:
 
 "email" is your Username/Email, "passphrase" is your Password.
 
+# editing password
+
+Just open `edit-password.py` in `Python 3.9` and type the name in, then enter your new username and password and it edits and encrypts!
+
+# deleting password
+
+Open `delete-password.py` in `Python 3.9` and type the file name in. It will display its decrypted contents just in case.
+
 # any help/questions?
 
 <br>
