@@ -1,5 +1,5 @@
 # passwordsaver
-
+a nice and easy way to save your passwords, entirely made out of python, with a secure encryption.
 <br>
 
 # what is it?
