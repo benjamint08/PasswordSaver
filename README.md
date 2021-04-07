@@ -1,14 +1,50 @@
 # passwordsaver
 a nice and easy way to save your passwords, entirely made out of python, with a secure encryption.
 <br>
-
-# what is it?
-
+<br>
+<h1>== Important collapsibles! ==</h1>
+<details>
+  <summary>What is it?</summary>
 PasswordSaver is a semi-secure password saver with encryption created in Python 3.9.
+</details>
 
-# reviews
+<br>
 
-<img width="295" alt="Screenshot 2021-04-07 at 12 40 20" src="https://user-images.githubusercontent.com/61296321/113860879-721c0d00-979e-11eb-808d-8af4c38f6fee.png">
+<details>
+  <summary>Reviews</summary>
+  <img width="295" alt="Screenshot 2021-04-07 at 12 40 20" src="https://user-images.githubusercontent.com/61296321/113860879-721c0d00-979e-11eb-808d-8af4c38f6fee.png">
+</details>
+
+<br>
+
+<details>
+<summary>Arguments (important!)</summary>
+<h1>Saving a password with args</h1>
+To save a password with args, CD to the folder and type:
+
+`python3.9 save-password.py -S --name NAME --email EMAIL --password PASSWORD`
+<br>
+.. or type:
+`python3.9 save-password.py --help`. All arguments are required for quick saving!
+<br>
+<h1>Editing a password with args</h1>
+To save a password with args, CD to the folder and type:
+
+`python3.9 edit-password.py -E --name NAME`
+<br>
+.. or type:
+`python3.9 edit-password.py --help`. All arguments are required for quick editing!
+<br>
+<h1>Deleting a password with args</h1>
+The same as the other two, CD to the folder and type:
+
+`python3.9 delete-password.py --D --name NAME`
+<br>
+.. or type:
+`python3.9 delete-password.py --help`. Again, all arguments are required for quick deleting!
+</details>
+
+<h1>== Important collapsibles! ==</h1>
 
 # how do I use it?
 

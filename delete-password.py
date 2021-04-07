@@ -1,6 +1,7 @@
 from cryptography.fernet import Fernet
 import os
 import random
+import argparse,sys
 
 fpath = __file__
 absolute_path = os.path.abspath(fpath)
@@ -49,4 +50,21 @@ def start():
         print("File does not exist!")
         start()
 
-start()
+parser = argparse.ArgumentParser()
+parser.add_argument("-N", "--name", help="get a password")
+parser.add_argument("-D", "--delete", help="get", action="store_true")
+args = parser.parse_args()
+
+if args.delete:
+    if args.name:
+        full_path = epicPath + args.name + '.txt'
+        key = load_key()
+        if os.path.exists(full_path):
+            decrypt(full_path, key)
+        else:
+            print("File does not exist!")
+            sys.exit()
+    else:
+        start()
+else:
+    start()
