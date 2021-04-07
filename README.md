@@ -2,11 +2,11 @@
 
 <br>
 
-#### what is it?
+# what is it?
 
 PasswordSaver is a semi-secure password saver with encryption created in Python 3.9.
 
-#### how do I use it?
+# how do I use it?
 
 First, if you don't have it, install '[pip](https://github.com/pypa/pip/releases/tag/21.0.1)' (installation guide [here](#installing-pip)) , it's required for this as it installs the required Python libraries.
 
