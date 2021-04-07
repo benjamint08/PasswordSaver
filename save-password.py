@@ -88,7 +88,7 @@ parser.add_argument("-S", "--save", help="save a password", action="store_true")
 parser.add_argument("-E", "--email", help="email/user to save")
 parser.add_argument("-N", "--name", help="name of password to save")
 parser.add_argument("-P", "--password", help="password to save")
-parser.add_argument("-R", "--random", help="generates a random password", action="store_true")
+parser.add_argument("-R", "--random", help="generates a random password")
 args = parser.parse_args()
 
 password_characters = string.ascii_letters + string.digits + string.punctuation
@@ -126,7 +126,7 @@ if args.save:
                         sys.exit()
                     else:
                         full_path = epicPath + args.name + '.txt'
-                        for x in range(random.randrange(10,60)):
+                        for x in range(args.random):
                             password.append(random.choice(password_characters))
                         x = {"name": args.name, "email": args.email, "passphrase": ''.join(password)}
                         j = json.dumps(x)

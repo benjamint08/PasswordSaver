@@ -45,6 +45,30 @@ The same as the other two, CD to the folder and type:
 </details>
 <br>
 <details>
+<summary>Generating a random password</summary>
+<br>
+<details>
+<summary>Inside the UI</summary>
+<h1>inside the UI</h1>
+To generate a random password inside the UI:
+
+CD into the folder and type `python3.9 save-gui.py` and press Enter. Inside the UI press Generate. This will generate a random password for you.
+</details>
+<br>
+<details>
+<summary>Inside the CLI</summary>
+<h1>in the CLI</h1>
+
+CD into the folder and type `python3.9 save-password.py -S --name NAME --email EMAIL/USER --random LENGTH`
+
+-S = Checking that you want to save<br>
+--name NAME = Name of the file, example: --name GitHub<br>
+--email EMAIL/USER = Username of website, example: --email test@example.com<br>
+--random LENGTH = Generates a random password for you, example: --random 20 (generates a 20 character long password)
+</details>
+</details>
+<br>
+<details>
 <summary>UI Saving/Getting</summary>
 CD into the folder and type this to get the save UI:
 
