@@ -38,8 +38,11 @@ def decrypt(filename, key, name):
         file.close()
     with open(decfile, "r") as file:
         e = file.read()
+        pp = json.loads(e)
         print("="*40, "Decrypted Password", "="*40)
-        print(e)
+        print("Name - ",pp['name'])
+        print("User/Email - ",pp['email'])
+        print("Password - ",pp['passphrase'])
         print("=" * 40, "Decrypted Password", "=" * 40)
         file.close()
     newuser = input("Enter new username: ")

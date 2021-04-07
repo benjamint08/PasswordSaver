@@ -87,9 +87,9 @@ It then encrypts the JSON and saves it to /passwords/(name).txt
 Then to get the password, open `get-password.py` in `Python 3.9` and enter the name of the password you saved. It displays it in your Terminal, and keeps it encrypted.
 It should look like this:
 
-` "name": "Password Name", "email": "text@example.com", "passphrase": "test"}`
-
-"email" is your Username/Email, "passphrase" is your Password.
+`Name - GitHub (example)`
+<br>`User/Email - test@example.com`<br>
+`Password - password`
 
 # editing password
 

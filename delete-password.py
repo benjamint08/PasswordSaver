@@ -2,6 +2,7 @@ from cryptography.fernet import Fernet
 import os
 import random
 import argparse,sys
+import json
 
 fpath = __file__
 absolute_path = os.path.abspath(fpath)
@@ -24,8 +25,11 @@ def decrypt(filename, key):
         file.close()
     with open(decfile, "r") as file:
         e = file.read()
+        pp = json.loads(e)
         print("="*40, "Decrypted Password", "="*40)
-        print(e)
+        print("Name - ",pp['name'])
+        print("User/Email - ",pp['email'])
+        print("Password - ",pp['passphrase'])
         print("=" * 40, "Decrypted Password", "=" * 40)
         print("Password deleted.")
         file.close()

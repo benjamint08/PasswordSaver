@@ -3,12 +3,12 @@ import os
 import random
 from cryptography.fernet import Fernet
 import argparse, sys
+import string
 
 fpath = __file__
 absolute_path = os.path.abspath(fpath)
 base_dir = os.path.dirname(absolute_path)
 epicPath = base_dir + '/passwords/'
-
 
 def write_key():
     keyPath = base_dir + '/special/'
@@ -78,7 +78,6 @@ def save(load, full_path):
     key = load_key()
     encrypt(full_path, key)
 
-
 def generate(y, name):
     full_path = epicPath + name + '.txt'
     save(y, full_path)
@@ -89,7 +88,12 @@ parser.add_argument("-S", "--save", help="save a password", action="store_true")
 parser.add_argument("-E", "--email", help="email/user to save")
 parser.add_argument("-N", "--name", help="name of password to save")
 parser.add_argument("-P", "--password", help="password to save")
+parser.add_argument("-R", "--random", help="generates a random password", action="store_true")
 args = parser.parse_args()
+
+password_characters = string.ascii_letters + string.digits + string.punctuation
+
+password = []
 
 if args.save:
     if args.name:
@@ -110,7 +114,25 @@ if args.save:
                     j = json.dumps(x)
                     save(j, full_path)
             else:
-                name()
+                if args.random:
+                    if not os.path.exists(keyname):
+                        write_key()
+                        print("=" * 30, "Key Generator", "=" * 30)
+                        print(
+                            "I have generated your SPECIAL key needed to DECRYPT your keys. Do NOT delete this, or your passwords will be lost!")
+                        print("=" * 75)
+                    if os.path.exists(epicPath + args.name + '.txt'):
+                        print("Name is taken!")
+                        sys.exit()
+                    else:
+                        full_path = epicPath + args.name + '.txt'
+                        for x in range(random.randrange(10,60)):
+                            password.append(random.choice(password_characters))
+                        x = {"name": args.name, "email": args.email, "passphrase": ''.join(password)}
+                        j = json.dumps(x)
+                        save(j, full_path)
+                else:
+                    name()
         else:
             name()
     else:

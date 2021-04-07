@@ -3,6 +3,8 @@ import os
 import sys
 from cryptography.fernet import Fernet
 import json
+import random
+import string
 
 fpath = __file__
 absolute_path = os.path.abspath(fpath)
@@ -28,6 +30,9 @@ def Pass():
     else:
         name_msg.set("Name is taken!")
 
+password = []
+password_characters = string.ascii_letters + string.digits + string.punctuation
+
 def load_key():
     fpath = __file__
     absolute_path = os.path.abspath(fpath)
@@ -35,6 +40,13 @@ def load_key():
     epicPath = base_dir + '/special/'
     file_name = epicPath + 'spec.key'
     return open(file_name, "rb").read()
+
+def Generate():
+    length = random.randrange(10,50)
+    for x in range(length):
+        password.append(random.choice(password_characters))
+    pass_msg.set(''.join(password))
+    password.clear()
 
 def write_key():
     keyPath = base_dir + '/special/'
@@ -78,6 +90,8 @@ entry_field_pass = tkinter.Entry(top, textvariable=pass_msg)
 entry_field_pass.pack()
 send_button = tkinter.Button(top, text="Save", command=Pass)
 send_button.pack()
+gen_button = tkinter.Button(top, text="Generate", command=Generate)
+gen_button.pack()
 
 keyPath = base_dir + '/special/'
 keyname = keyPath + 'spec.key'
