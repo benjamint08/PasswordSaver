@@ -13,7 +13,7 @@ epicPath = base_dir + '/passwords/'
 
 def Pass():
     folder = base_dir + '/passwords/'
-    full_path = folder + name_msg.get() + '.txt'
+    full_path = folder + name_msg.get() + '.pwsaver'
     x = {"name": name_msg.get(), "email": email_msg.get(), "passphrase": pass_msg.get()}
     load = json.dumps(x)
     if not os.path.exists(folder):

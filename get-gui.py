@@ -12,7 +12,7 @@ epicPath = base_dir + '/passwords/'
 
 def Pass():
     folder = base_dir + '/passwords/'
-    full_path = folder + name_msg.get() + '.txt'
+    full_path = folder + name_msg.get() + '.pwsaver'
     if not os.path.exists(full_path):
         name_msg.set("File doesnt exist")
     else:
@@ -50,7 +50,7 @@ def decrypt(filename, key):
     decdir = base_dir + '/decpass/'
     if not os.path.exists(decdir):
         os.mkdir(decdir)
-    decfile = decdir + 'dec-' + str(random.randrange(0,500000)) + '.txt'
+    decfile = decdir + 'dec-' + str(random.randrange(0,500000)) + '.pwsaver'
     with open(decfile, "wb") as file:
         file.write(decrypted_data)
         file.close()

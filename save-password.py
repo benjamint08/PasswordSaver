@@ -27,7 +27,7 @@ keyname = keyPath + 'spec.key'
 
 def name():
     tname = input("Enter name of password: ")
-    if os.path.exists(epicPath + tname + '.txt'):
+    if os.path.exists(epicPath + tname + '.pwsaver'):
         print("Name is taken!")
         name()
     else:
@@ -79,7 +79,7 @@ def save(load, full_path):
     encrypt(full_path, key)
 
 def generate(y, name):
-    full_path = epicPath + name + '.txt'
+    full_path = epicPath + name + '.pwsaver'
     save(y, full_path)
 
 
@@ -105,11 +105,11 @@ if args.save:
                     print(
                         "I have generated your SPECIAL key needed to DECRYPT your keys. Do NOT delete this, or your passwords will be lost!")
                     print("=" * 75)
-                if os.path.exists(epicPath + args.name + '.txt'):
+                if os.path.exists(epicPath + args.name + '.pwsaver'):
                     print("Name is taken!")
                     sys.exit()
                 else:
-                    full_path = epicPath + args.name + '.txt'
+                    full_path = epicPath + args.name + '.pwsaver'
                     x = {"name": args.name, "email": args.email, "passphrase": args.password}
                     j = json.dumps(x)
                     save(j, full_path)
@@ -121,11 +121,11 @@ if args.save:
                         print(
                             "I have generated your SPECIAL key needed to DECRYPT your keys. Do NOT delete this, or your passwords will be lost!")
                         print("=" * 75)
-                    if os.path.exists(epicPath + args.name + '.txt'):
+                    if os.path.exists(epicPath + args.name + '.pwsaver'):
                         print("Name is taken!")
                         sys.exit()
                     else:
-                        full_path = epicPath + args.name + '.txt'
+                        full_path = epicPath + args.name + '.pwsaver'
                         for x in range(args.random):
                             password.append(random.choice(password_characters))
                         x = {"name": args.name, "email": args.email, "passphrase": ''.join(password)}

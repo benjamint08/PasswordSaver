@@ -32,7 +32,7 @@ def decrypt(filename, key, name):
     decdir = base_dir + '/decpass/'
     if not os.path.exists(decdir):
         os.mkdir(decdir)
-    decfile = decdir + 'dec-' + str(random.randrange(0,500000)) + '.txt'
+    decfile = decdir + 'dec-' + str(random.randrange(0,500000)) + '.pwsaver'
     with open(decfile, "wb") as file:
         file.write(decrypted_data)
         file.close()
@@ -67,7 +67,7 @@ def load_key():
 
 def start():
     id = input("Enter name of password: ")
-    full_path = epicPath + id + '.txt'
+    full_path = epicPath + id + '.pwsaver'
     key = load_key()
     if os.path.exists(full_path):
         decrypt(full_path, key, id)
@@ -82,7 +82,7 @@ args = parser.parse_args()
 
 if args.edit:
     if args.name:
-        full_path = epicPath + args.name + '.txt'
+        full_path = epicPath + args.name + '.pwsaver'
         key = load_key()
         if os.path.exists(full_path):
             decrypt(full_path, key, args.name)
