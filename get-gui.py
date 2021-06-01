@@ -25,6 +25,8 @@ def Pass():
 def Clear():
     email_text.set("")
     pass_text.set("")
+    pass_lock_msg.set("")
+    name_msg.set("")
 
 def load_key():
     fpath = __file__
@@ -83,6 +85,7 @@ def decrypt(filename, key):
         k = json.loads(e)
         email_text.set(k['email'])
         pass_text.set(k['passphrase'])
+        pass_lock_msg.set("")
         file.close()
     os.remove(decfile)
     os.rmdir(decdir)
