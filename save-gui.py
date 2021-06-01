@@ -23,9 +23,9 @@ def Pass():
             key_file.write(load)
             key_file.close()
             key = load_key()
-            name_msg.set("")
-            email_msg.set("")
-            pass_msg.set("")
+            name_msg.set("Name here")
+            email_msg.set("Email here")
+            pass_msg.set("Password here")
             encrypt(full_path, key)
     else:
         name_msg.set("Name is taken!")
