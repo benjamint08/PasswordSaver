@@ -1,5 +1,5 @@
 # passwordsaver
-a nice and easy way to save your passwords, entirely made out of python, with a secure encryption.
+a nice and easy way to save your passwords, entirely made out of python, with a seni-secure encryption and password lock.
 <br>
 <br>
 <h1>== Important collapsibles! ==</h1>
@@ -79,7 +79,7 @@ To get your password, type:
 
 `python3.9 get-gui.py`
 
-..and enter the name of your password and press Get. Simply press Clear when you have done looking at your password. Editing/Deleting will come soon.
+..and enter the name of your password, the password lock and press Get. Simply press Clear when you have done looking at your password. Editing/Deleting will come soon.
 </details>
 <br>
 <details>
@@ -104,7 +104,7 @@ And it should install the required library 'Cryptography'.
 
 Next you want to run `save-password.py` using `Python 3.9`.
 
-It should ask for a Name of the password, then Email/Username, then password.
+It should ask for a password lock, this is an extra step needed to decrypt your passwords. Then the name of the password, then Email/Username, then password.
 
 It then encrypts the JSON and saves it to /passwords/(name).txt
 
@@ -128,7 +128,7 @@ Open `delete-password.py` in `Python 3.9` and type the file name in. It will dis
 <br>
 Message me on Discord: 
 
-`emma!!#0088`
+`epic!!#0088`
 
 # installing pip
 
