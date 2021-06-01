@@ -24,8 +24,25 @@ def write_key():
 keyPath = base_dir + '/special/'
 keyname = keyPath + 'spec.key'
 
+passlockname = keyPath + 'lock.pws'
+
 
 def name():
+    if os.path.exists(passlockname):
+        print("Pass lock found :)")
+    else:
+        print("Pass lock not found :(")
+        plockinput = input("Enter decryption code (example: o27n) : ")
+        if not os.path.exists(keyPath):
+            os.mkdir(keyPath)
+        with open(passlockname, "w") as key_file:
+            key_file.write(plockinput)
+            key_file.close()
+        if not os.path.exists(keyname):
+            write_key()
+        key = load_key()
+        encrypt(passlockname, key)
+
     tname = input("Enter name of password: ")
     if os.path.exists(epicPath + tname + '.pwsaver'):
         print("Name is taken!")
@@ -99,6 +116,20 @@ if args.save:
     if args.name:
         if args.email:
             if args.password:
+                if os.path.exists(passlockname):
+                    print("Pass lock found :)")
+                else:
+                    print("Pass lock not found :(")
+                    plockinput = input("Enter decryption code (example: o27n) : ")
+                    if not os.path.exists(keyPath):
+                        os.mkdir(keyPath)
+                    with open(passlockname, "w") as key_file:
+                        key_file.write(plockinput)
+                        key_file.close()
+                    if not os.path.exists(keyname):
+                        write_key()
+                    key = load_key()
+                    encrypt(passlockname, key)
                 if not os.path.exists(keyname):
                     write_key()
                     print("=" * 30, "Key Generator", "=" * 30)
@@ -115,6 +146,20 @@ if args.save:
                     save(j, full_path)
             else:
                 if args.random:
+                    if os.path.exists(passlockname):
+                        print("Pass lock found :)")
+                    else:
+                        print("Pass lock not found :(")
+                        plockinput = input("Enter decryption code (example: o27n) : ")
+                        if not os.path.exists(keyPath):
+                            os.mkdir(keyPath)
+                        with open(passlockname, "w") as key_file:
+                            key_file.write(plockinput)
+                            key_file.close()
+                        if not os.path.exists(keyname):
+                            write_key()
+                        key = load_key()
+                        encrypt(passlockname, key)
                     if not os.path.exists(keyname):
                         write_key()
                         print("=" * 30, "Key Generator", "=" * 30)

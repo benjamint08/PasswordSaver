@@ -11,6 +11,10 @@ absolute_path = os.path.abspath(fpath)
 base_dir = os.path.dirname(absolute_path)
 epicPath = base_dir + '/passwords/'
 
+keyPath = base_dir + '/special/'
+passlockname = keyPath + 'lock.pws'
+
+
 def Pass():
     folder = base_dir + '/passwords/'
     full_path = folder + name_msg.get() + '.pwsaver'
@@ -74,26 +78,36 @@ def encrypt(filename, key):
 top = tkinter.Tk()
 top.title("Save Password GUI")
 
-messages_frame = tkinter.Frame(top)
-name_msg = tkinter.StringVar()  # For the messages to be sent.
-name_msg.set("Name here")
-email_msg = tkinter.StringVar()  # For the messages to be sent.
-email_msg.set("Email here")
-pass_msg = tkinter.StringVar()  # For the messages to be sent.
-pass_msg.set("Password here")
-scrollbar = tkinter.Scrollbar(messages_frame)  # To navigate through past messages.
-entry_field_msg = tkinter.Entry(top, textvariable=name_msg)
-entry_field_msg.pack()
-entry_field_email = tkinter.Entry(top, textvariable=email_msg)
-entry_field_email.pack()
-entry_field_pass = tkinter.Entry(top, textvariable=pass_msg)
-entry_field_pass.pack()
-send_button = tkinter.Button(top, text="Save", command=Pass)
-send_button.pack()
-gen_button = tkinter.Button(top, text="Generate", command=Generate)
-gen_button.pack()
+if not os.path.exists(passlockname):
+    messages_frame = tkinter.Frame(top)
+    name_msg = tkinter.StringVar()  # For the messages to be sent.
+    name_msg.set("Run save-password.py")
+    name_msg_2 = tkinter.StringVar()
+    name_msg_2.set("for decryption key!")
+    entry_field_msg = tkinter.Entry(top, textvariable=name_msg)
+    entry_field_msg.pack()
+    entry_field_msg_2 = tkinter.Entry(top, textvariable=name_msg_2)
+    entry_field_msg_2.pack()
+else:
+    messages_frame = tkinter.Frame(top)
+    name_msg = tkinter.StringVar()  # For the messages to be sent.
+    name_msg.set("Name here")
+    email_msg = tkinter.StringVar()  # For the messages to be sent.
+    email_msg.set("Email here")
+    pass_msg = tkinter.StringVar()  # For the messages to be sent.
+    pass_msg.set("Password here")
+    scrollbar = tkinter.Scrollbar(messages_frame)  # To navigate through past messages.
+    entry_field_msg = tkinter.Entry(top, textvariable=name_msg)
+    entry_field_msg.pack()
+    entry_field_email = tkinter.Entry(top, textvariable=email_msg)
+    entry_field_email.pack()
+    entry_field_pass = tkinter.Entry(top, textvariable=pass_msg)
+    entry_field_pass.pack()
+    send_button = tkinter.Button(top, text="Save", command=Pass)
+    send_button.pack()
+    gen_button = tkinter.Button(top, text="Generate", command=Generate)
+    gen_button.pack()
 
-keyPath = base_dir + '/special/'
 keyname = keyPath + 'spec.key'
 if not os.path.exists(keyname):
     write_key()

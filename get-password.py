@@ -9,8 +9,36 @@ absolute_path = os.path.abspath(fpath)
 base_dir = os.path.dirname(absolute_path)
 epicPath = base_dir + '/passwords/'
 
+keyPath = base_dir + '/special/'
+passlockname = keyPath + 'lock.pws'
+
 def decrypt(filename, key):
     f = Fernet(key)
+    if not os.path.exists(passlockname):
+        print("Use save-password.py to generate your decryption key :(")
+        sys.exit()
+    with open(passlockname, "rb") as file:
+        encrypted_data = file.read()
+        file.close()
+    decrypted_data = f.decrypt(encrypted_data)
+    decdir = base_dir + '/decpass/'
+    if not os.path.exists(decdir):
+        os.mkdir(decdir)
+    decfile = decdir + 'dec-' + str(random.randrange(0,500000)) + '.pwsaver'
+    with open(decfile, "wb") as file:
+        file.write(decrypted_data)
+        file.close()
+    with open(decfile, "r") as file:
+        e = file.read()
+        file.close()
+    os.remove(decfile)
+    os.rmdir(decdir)
+    lol = input("Input your decryption key: ")
+    if lol == e:
+        print("Correct, decrypting!")
+    else:
+        input("Incorrect.")
+        sys.exit()
     with open(filename, "rb") as file:
         encrypted_data = file.read()
         file.close()
